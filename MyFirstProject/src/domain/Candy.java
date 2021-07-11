@@ -2,9 +2,11 @@ package domain;
 
 public class Candy extends Sweets {
 	
-	private String typeCandy;
-	private String titleCandy;
-	private Integer weightCandy;
+	private Integer shugarContent;
+	
+	public Candy(String type, String title, Integer weight, Integer shugarContent) {
+		super();
+	}
 	
 
 }

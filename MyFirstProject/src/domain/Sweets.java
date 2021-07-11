@@ -2,20 +2,20 @@ package domain;
 
 public class Sweets {
 	
-	private String	typeSweet;
-	private String	titleSweet;
-	private Integer	weightSweet;
+	private String	type;
+	private String	title;
+	private Integer	weight;
 	
-	public String getTypeSweet() {
-		return typeSweet;
+	public String getType() {
+		return type;
 	}
 	
-	public String getTitleSweet() {
-		return titleSweet;
+	public String getTitle() {
+		return title;
 	}
 	
-	public Integer getWeightSweet() {
-		return weightSweet;
+	public Integer getWeight() {
+		return weight;
 	}
 
 }
