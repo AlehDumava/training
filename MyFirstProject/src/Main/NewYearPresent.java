@@ -1,9 +1,14 @@
 package Main;
 
+import domain.CollectNewYearPresent;
+
 public class NewYearPresent {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
+		CollectNewYearPresent newPresent = new CollectNewYearPresent();
+		newPresent.CollectPresent();
+		
 
 	}
 
