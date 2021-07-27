@@ -1,6 +1,9 @@
 package Main;
 
 import domain.CollectNewYearPresent;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
 
 public class NewYearPresent {
 
@@ -8,8 +11,9 @@ public class NewYearPresent {
 	
 		CollectNewYearPresent newPresent = new CollectNewYearPresent();
 		newPresent.CollectPresent();
-		
-
+		//newPresent.showPresentOnTheScreen(sweetsForPresent);
+		//newPresent.getWeightPresent(sweetsForPresent);
+		//newPresent.sortCandyesByWeight();
 	}
 
 }

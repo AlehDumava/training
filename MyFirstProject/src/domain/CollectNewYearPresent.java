@@ -1,10 +1,14 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
 
 
 public class CollectNewYearPresent {
 	
+	private List sweetsForPresent;
+
 	public void CollectPresent() {
 		
 		ArrayList<Sweets> sweetsForPresent = new ArrayList<Sweets>();
@@ -46,19 +50,44 @@ public class CollectNewYearPresent {
 			
 	}
 	
-	public void showPresentOnTheScreen(ArrayList<Sweets> sweetsForPresent) {
+	
+	public void showPresentOnTheScreen(ArrayList<Sweets> sweets) {
 		
 		System.out.println("-------- New Year Present --------\n");
 		System.out.println("Num:   " + "Type Sweets:   " + "Title Sweets:   " + "Weight, gramm:   " + "Shugar Content, perсent:  ");
 		
 		int serialNumberSweet = 1;
-		for(Sweets element : sweetsForPresent) {
+		for(Sweets element : sweets) {
 			
 			System.out.println(serialNumberSweet + "" + element.getType() + "   " + element.getTitle() + "  " + element.getWeight() + "  ");
 			serialNumberSweet ++;
 			
 		}
+		
+	}
+		
 	
+	public void getWeightPresent (ArrayList<Sweets> sweets) {
+		
+		int weightPresent = 0;
+		for(Sweets element : sweets) {
+			weightPresent += element.getWeight();
+		}
+		
+	
+		System.out.println("---------- Weight Present, gramm ----------");
+		System.out.println(weightPresent);
 	}
 	
+	
+	public void sortCandyesByWeight() {
+		
+		Collections.sort(sweetsForPresent);
+		
+		
+	}
+	
+	
 }
+	
+
