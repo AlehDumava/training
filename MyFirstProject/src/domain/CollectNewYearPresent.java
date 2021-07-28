@@ -7,59 +7,43 @@ import java.util.Collections;
 
 public class CollectNewYearPresent {
 	
-	private List sweetsForPresent;
-
-	public void CollectPresent() {
+	public static List<CaramelCandy> collectCaramelCandyForPresent() {
 		
-		ArrayList<Sweets> sweetsForPresent = new ArrayList<Sweets>();
+		List<CaramelCandy> caramelCandy = new ArrayList<>();
 		
-			Candy caramelWerthers = new Candy("Caramel", "Werther's Original", 3, 30);
-			Candy caramelBranchs = new Candy("Caramel", "Branch's", 2, 35);
-			Candy caramelNips = new Candy("Caramel", "Nips", 3, 25);
-			Candy caramelDovePromises = new Candy("Caramel", "Dove Promises", 2, 45);
-			Candy caramelSathers = new Candy("Caramel", "Sathers", 4, 55);
+			caramelCandy.add(new CaramelCandy("Caramel", "Werther's Original", 3, 30));
+			caramelCandy.add(new CaramelCandy("Caramel", "Branch's", 2, 35));
+			caramelCandy.add(new CaramelCandy("Caramel", "Nips", 3, 25));
+			caramelCandy.add(new CaramelCandy("Caramel", "Dove Promises", 2, 45));
+			caramelCandy.add(new CaramelCandy("Caramel", "Sathers", 4, 55));
 			
-			Candy souffleGlazed = new Candy("Souffle", "Glazed Souffle", 4, 25);
-			Candy souffleChocolate = new Candy("Souffle", "Chocolate Souffle", 6, 15);
-			Candy souffleLollipops = new Candy("Souffle", "Lollipops", 2, 25);
-			Candy souffleMilkyWay = new Candy("Souffle", "Milky Way", 3, 55);
-			Candy souffleBonPari = new Candy("Souffle", "Bon Pari", 2, 65);
-					
-			sweetsForPresent.add(caramelWerthers);
-			sweetsForPresent.add(caramelBranchs);
-			sweetsForPresent.add(caramelNips);
-			sweetsForPresent.add(caramelDovePromises);
-			sweetsForPresent.add(caramelSathers);
-			
-			sweetsForPresent.add(souffleGlazed);
-			sweetsForPresent.add(souffleChocolate);
-			sweetsForPresent.add(souffleLollipops);
-			sweetsForPresent.add(souffleMilkyWay);
-			sweetsForPresent.add(souffleBonPari);
-			
-			
-			System.out.println("-------- New Year Present --------");
-			System.out.println("Num:   " + "Type Sweets:   " + "Title Sweets:   " + "\t\tWeight, gramm: " + "\t Shugar Content, percent:  ");
-			
-			int serialNumberSweet = 1;
-			for(Sweets element : sweetsForPresent) {
-				
-				System.out.println(serialNumberSweet + "\t" + element.getType() + "\t\t" + element.getTitle() + "\t\t" + element.getWeight() + "  ");
-				serialNumberSweet ++;
-			}
-			
+			return caramelCandy;
 	}
 	
-	
-	public void showPresentOnTheScreen(ArrayList<Sweets> sweets) {
+	public static List<ChocolateCandy> collectChocolateCandyForPresent() {
 		
-		System.out.println("-------- New Year Present --------\n");
-		System.out.println("Num:   " + "Type Sweets:   " + "Title Sweets:   " + "Weight, gramm:   " + "Shugar Content, perсent:  ");
+		List<ChocolateCandy> chocolateCandy = new ArrayList<>();
+		
+			chocolateCandy.add(new ChocolateCandy("Chocolate", "Glazed Souffle", 4, 25));
+			chocolateCandy.add(new ChocolateCandy("Chocolate", "Chocolate Souffle", 6, 15));
+			chocolateCandy.add(new ChocolateCandy("Chocolate", "Lollipops", 2, 25));
+			chocolateCandy.add(new ChocolateCandy("Chocolate", "Milky Way", 3, 55));
+			chocolateCandy.add(new ChocolateCandy("Chocolate", "Bon Pari", 2, 65));
+					
+			return chocolateCandy;
+	}
+	
+	public static void showPresentOnTheScreen(List<CaramelCandy> sweetsForPresent) {
+		
+		System.out.println("-------- New Year present --------\n");
+		System.out.println("Num:   " + "Type Sweets:   " + "Title Sweets:		" + "Weight, gramm:   " + "Shugar Content, percent:  \n");
 		
 		int serialNumberSweet = 1;
-		for(Sweets element : sweets) {
+		for(CaramelCandy element : sweetsForPresent) {
 			
-			System.out.println(serialNumberSweet + "" + element.getType() + "   " + element.getTitle() + "  " + element.getWeight() + "  ");
+			System.out.println(serialNumberSweet + "	" + element.getType() + "		" + element.getTitle() + "		" + 
+			element.getWeight() + "		" + element.getShugarContent());
+			
 			serialNumberSweet ++;
 			
 		}
@@ -67,24 +51,28 @@ public class CollectNewYearPresent {
 	}
 		
 	
-	public void getWeightPresent (ArrayList<Sweets> sweets) {
+	public static Integer getWeightPresent (List<CaramelCandy> caramelCandy) {
 		
 		int weightPresent = 0;
-		for(Sweets element : sweets) {
+		for(CaramelCandy element : caramelCandy) {
 			weightPresent += element.getWeight();
 		}
-		
-	
-		System.out.println("---------- Weight Present, gramm ----------");
+			
+		System.out.println("\n---------- Weight Present, gramm ----------");
 		System.out.println(weightPresent);
+		
+		return weightPresent;
 	}
 	
 	
-	public void sortCandyesByWeight() {
+	public void sortCandyByWeight() {
 		
-		Collections.sort(sweetsForPresent);
+					
+	}
+	
+	public void findCandyByShugarContent() {
 		
-		
+				
 	}
 	
 	
