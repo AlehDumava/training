@@ -7,54 +7,29 @@ import java.util.Collections;
 
 public class CollectNewYearPresent {
 	
-	public static List<CaramelCandy> collectCaramelCandyForPresent() {
+	public static List<Sweets> collectCandyForPresent() {
 		
-		List<CaramelCandy> caramelCandy = new ArrayList<>();
+		List<Sweets> candy = new ArrayList<>();
 		
-			caramelCandy.add(new CaramelCandy("Caramel", "Werther's Original", 3, 30));
-			caramelCandy.add(new CaramelCandy("Caramel", "Branch's", 2, 35));
-			caramelCandy.add(new CaramelCandy("Caramel", "Nips", 3, 25));
-			caramelCandy.add(new CaramelCandy("Caramel", "Dove Promises", 2, 45));
-			caramelCandy.add(new CaramelCandy("Caramel", "Sathers", 4, 55));
+			candy.add(new CaramelCandy("Caramel", "Werther's Original", 3, 30, "Nougat"));
+			candy.add(new CaramelCandy("Caramel", "Branch's", 2, 35, "Hazelnut"));
+			candy.add(new CaramelCandy("Caramel", "Nips", 3, 25, "Nougat"));
+			candy.add(new CaramelCandy("Caramel", "Dove Promises", 2, 45, "Nougat"));
+			candy.add(new CaramelCandy("Caramel", "Sathers", 4, 55, "Peanut"));
+			candy.add(new ChocolateCandy("Chocolate", "Glazed Souffle", 4, 25, 14));
+			candy.add(new ChocolateCandy("Chocolate", "Chocolate Souffle", 6, 15, 25));
+			candy.add(new ChocolateCandy("Chocolate", "Lollipops", 2, 25, 30));
+			candy.add(new ChocolateCandy("Chocolate", "Milky Way", 3, 55, 15));
+			candy.add(new ChocolateCandy("Chocolate", "Bon Pari", 2, 65, 45));
 			
-			return caramelCandy;
+			return candy;
 	}
 	
-	public static List<ChocolateCandy> collectChocolateCandyForPresent() {
-		
-		List<ChocolateCandy> chocolateCandy = new ArrayList<>();
-		
-			chocolateCandy.add(new ChocolateCandy("Chocolate", "Glazed Souffle", 4, 25));
-			chocolateCandy.add(new ChocolateCandy("Chocolate", "Chocolate Souffle", 6, 15));
-			chocolateCandy.add(new ChocolateCandy("Chocolate", "Lollipops", 2, 25));
-			chocolateCandy.add(new ChocolateCandy("Chocolate", "Milky Way", 3, 55));
-			chocolateCandy.add(new ChocolateCandy("Chocolate", "Bon Pari", 2, 65));
-					
-			return chocolateCandy;
-	}
 	
-	public static void showPresentOnTheScreen(List<CaramelCandy> sweetsForPresent) {
-		
-		System.out.println("-------- New Year present --------\n");
-		System.out.println("Num:   " + "Type Sweets:   " + "Title Sweets:		" + "Weight, gramm:   " + "Shugar Content, percent:  \n");
-		
-		int serialNumberSweet = 1;
-		for(CaramelCandy element : sweetsForPresent) {
-			
-			System.out.println(serialNumberSweet + "	" + element.getType() + "		" + element.getTitle() + "		" + 
-			element.getWeight() + "		" + element.getShugarContent());
-			
-			serialNumberSweet ++;
-			
-		}
-		
-	}
-		
-	
-	public static Integer getWeightPresent (List<CaramelCandy> caramelCandy) {
+	public Integer getWeightPresent (List<Sweets> candy) {
 		
 		int weightPresent = 0;
-		for(CaramelCandy element : caramelCandy) {
+		for(Sweets element : candy) {
 			weightPresent += element.getWeight();
 		}
 			
@@ -65,10 +40,7 @@ public class CollectNewYearPresent {
 	}
 	
 	
-	public void sortCandyByWeight() {
-		
-					
-	}
+	
 	
 	public void findCandyByShugarContent() {
 		

@@ -2,21 +2,21 @@ package domain;
 
 public class CaramelCandy extends Sweets {
 	
-	public Integer shugarContent;
+	public String stuffing;
 	
-	public CaramelCandy(String type, String title, Integer weight, Integer shugarContent) {
-		super(type, title, weight);
-		this.shugarContent = shugarContent;
+	public CaramelCandy(String type, String title, Integer shugarContent, Integer weight, String stuffing) {
+		super(type, title, shugarContent, weight);
+		this.stuffing = stuffing;
 	}
 
-	
-	public Integer getShugarContent() {
-		return shugarContent;
+	public String getStuffing() {
+		return stuffing;
 	}
 
-	public void setShugarContent(Integer shugarContent) {
-		this.shugarContent = shugarContent;
+	@Override
+	public String toString() {
+		return "CaramelCandy [stuffing="  + getStuffing() + "]" + "\n";
 	}
-	
 
+		
 }
