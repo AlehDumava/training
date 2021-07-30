@@ -4,11 +4,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import domain.Sweets;
 
 public class SortCandyByWeight<T> implements SortCandy<T> {
 
-	public void sort(List<Sweets> candy, SortCandy<Sweets> s, Comparator<Sweets> c) {
+	public void sort(List<T> candy, SortCandy<T> s, Comparator<T> c) {
 		s.sortCandy(candy, c);
 	}
 	
