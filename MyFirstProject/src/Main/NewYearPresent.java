@@ -7,6 +7,7 @@ import java.util.List;
 import Output.ShowPresentOnTheScreen;
 import Action.SortCandyByWeight;
 import Action.WeightComparator;
+import Action.FindCandyByShugarContent;
 
 
 
@@ -27,10 +28,17 @@ public class NewYearPresent {
 		
 		SortCandyByWeight newSort = new SortCandyByWeight();
 		newSort.sortCandy(Candy, new WeightComparator());
-		
-				
+						
 		System.out.println("\n========== Show New Year present after sort by Weight ==========\n");
 		showPresents.showPresent(Candy);
+		
+		FindCandyByShugarContent newFind = new FindCandyByShugarContent();
+		//newFind = compare(Sweets.shugarContent, Sweets.shugarContent);
+		
+		collectPresent.findCandyByShugarContent(25);
+		
+		System.out.println("\n========== Show New Year present after searching Candy by Shugar Content ==========\n");
+		
 	}
 
 }

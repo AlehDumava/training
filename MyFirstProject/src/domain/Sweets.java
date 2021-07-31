@@ -4,7 +4,7 @@ public abstract class Sweets {
 	
 	private String	type;
 	private String	title;
-	private Integer  shugarContent;
+	private Integer shugarContent;
 	private Integer	weight;
 	
 	
@@ -40,8 +40,8 @@ public abstract class Sweets {
 
 	@Override
 	public String toString() {
-		return "Sweets [type=" + type + ", title=" + title + ", shugarContent=" + shugarContent + ", weight=" + weight
-				+ ", getType()=" + getType() + ", getTitle()=" + getTitle() + ", getWeight()=" + getWeight() + "]";
+		return String.format("Type Sweets: %12s, Title Sweets: %20s, Shugar Content, percent: %4d, Weight, gramm: %4d", 
+				getType(), getTitle(), getShugarContent(), getWeight());
 	}
 
 	

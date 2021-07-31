@@ -15,13 +15,12 @@ public class ChocolateCandy extends Sweets {
 		return cacaoBeansContent;
 	}
 
-	public void setCacaoBeansContent(Integer cacaoBeansContent) {
-		this.cacaoBeansContent = cacaoBeansContent;
-	}
+	
 
 	@Override
 	public String toString() {
-		return "ChocolateCandy [cacaoBeansContent=" + getCacaoBeansContent() + "]"+"\n";
+		return String.format("Type Sweets:  %-12s Title Sweets:  %-20s Shugar Content, percent:  %-4d Weight, gramm:  %-4d CacaoBeansContent:  %-4d", 
+				getType(), getTitle(), getShugarContent(), getWeight(), getCacaoBeansContent());
 	}
 
 	
