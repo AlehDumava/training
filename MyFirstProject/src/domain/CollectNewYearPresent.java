@@ -1,9 +1,10 @@
 package domain;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
+import java.util.Iterator;
+
+
 
 
 public class CollectNewYearPresent {
@@ -30,6 +31,7 @@ public class CollectNewYearPresent {
 	public Integer getWeightPresent (List<Sweets> candy) {
 		
 		int weightPresent = 0;
+		
 		for(Sweets element : candy) {
 			weightPresent += element.getWeight();
 		}
@@ -37,27 +39,26 @@ public class CollectNewYearPresent {
 		System.out.println("\n---------- Weight Present, gramm ----------");
 		System.out.println(weightPresent);
 		
+
 		return weightPresent;
 	}
 	
 	
 		
-	public void findCandyByShugarContent(int a) {
+	public void findCandyByShugarContent(List<Sweets> candy, int minElementForFind, int maxElementForFind) {
 		
-		List<Sweets> candy = new ArrayList<Sweets>();
+		Iterator<Sweets> iter = candy.iterator();
 		
-		Comparator<Sweets> newFind = new Comparator<Sweets>() {
-			
-			public int compare(Sweets u1, Sweets u2) {
+			while(iter.hasNext()) {
 				
-				return  u1.getShugarContent().compareTo(u2.getShugarContent());
-			}
+				Sweets nextElement = iter.next();
 			
-		};
-		 
-		//int index = Collections.binarySearch(candy, new Sweets(a),  Collections.reverseOrder());
-		System.out.print("Binary search: ");
-		//System.out.println(index);
+				if ((nextElement.getShugarContent() < minElementForFind) || (nextElement.getShugarContent() > maxElementForFind)) {
+					
+					iter.remove();
+				}
+			} 
+			
 	}
 	
 	
