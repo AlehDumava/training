@@ -44,8 +44,12 @@ public class MyFileReader {
 				        	while (end != BreakIterator.DONE) {
 				        	
 				        		String word = sentence.substring(start, end);
-				        		if (Character.isLetterOrDigit(word.charAt(0))) {
-				        			counterWords++;	        	    
+				        		if (Character.isLetter(word.charAt(0))) {
+				               		if (Character.isLetter(word.charAt(0))) {
+				               			if (Character.isLetter(word.charAt(0))) {
+				               				counterWords++;	        	    
+				               			}
+				               		}	
 				        		}
 				        		start = end;
 				        		end = wordIterator.next();
@@ -66,7 +70,7 @@ public class MyFileReader {
 				System.out.println("The file was not found!" + e);
 				System.exit(0);
 			}
-		System.out.println("The file is copyed.");
+		System.out.println("The file is copied.");
 	}
 
 }
