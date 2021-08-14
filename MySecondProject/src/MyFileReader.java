@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.text.BreakIterator;
 import java.util.Locale;
+import java.util.Map;
+import java.util.TreeMap;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -19,11 +21,11 @@ public class MyFileReader {
 				
 		try {
 				BufferedReader input = new BufferedReader(new FileReader(path+"MyTextFile.txt"));
-				BufferedWriter output = new BufferedWriter(new FileWriter(path+"MyNewTextFile.txt"));
-				
+								
 				BreakIterator splitIntoSentences = BreakIterator.getSentenceInstance();
 				BreakIterator wordIterator = BreakIterator.getWordInstance();
 				
+				Map<Integer, String> treeMap = new TreeMap<>();
 				
 				while((getString = input.readLine()) != null) {
 									
@@ -56,21 +58,26 @@ public class MyFileReader {
 				        		
 				            }
 				        	System.out.println("	Count words: " + counterWords);
+				        	treeMap.put(counterWords, sentence);
 				      }
 					
 				}
 				System.out.println("+++++++++++++++++++++++++");
 				
-						
-				
+										
 				input.close();
-				output.close();
+								
+				for(Map.Entry<Integer, String> element : treeMap.entrySet()) {
+					 
+				    System.out.println(element.getKey()+" "+ element.getValue());
+
+				}
 			}
 			catch(FileNotFoundException e) {
 				System.out.println("The file was not found!" + e);
 				System.exit(0);
 			}
-		System.out.println("The file is copied.");
+		System.out.println("The file is sorted.");
 	}
 
 }
