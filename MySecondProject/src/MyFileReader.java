@@ -12,6 +12,20 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/*
+ 	Task 2.
+ 	Создать программу обработки текста учебника по программированию с использованием
+ 	классов (по необходимости) для представления: символа, слова, предложения, знака препинания и др.
+ 	Во всех задачах с формированием текста заменять табуляции и последовательности пробелов
+ 	одним пробелом. Программа должна обрабатывать адреса электронной почты и номера телефонов
+ 	в формате +ХХХ(ХХ)ХХХ-ХХ-ХХ как отдельные слова.
+ 	
+ 	Вариант 2.
+ 	Вывести все предложения заданного текста в порядке возрастания количества слов в каждом из них.
+  
+ */
+
+
 public class MyFileReader {
 
 
@@ -20,6 +34,7 @@ public class MyFileReader {
 		System.out.println("Start reading the file");
 		String path = "c://Users//User//git//training//MySecondProject//";
 		String getString;
+		//int indexSentences = 0;
 				
 		try {
 				BufferedReader input = new BufferedReader(new FileReader(path+"MyTextFile.txt"));
@@ -28,9 +43,10 @@ public class MyFileReader {
 				BreakIterator wordIterator = BreakIterator.getWordInstance();
 				
 				List<Sentence> listSentence = new ArrayList<>();
+								
 				
 				while((getString = input.readLine()) != null) {
-									
+					
 					splitIntoSentences.setText(getString);
 					int index = 0;
 					
@@ -38,9 +54,12 @@ public class MyFileReader {
 						
 				        String sentence = getString.substring(index, splitIntoSentences.current());
 				        index = splitIntoSentences.current();
-				       
-				        
+				           
+			        			        
 				        	wordIterator.setText(sentence);
+				        	//System.out.println(indexSentences + "==" + sentence);	 
+				        	//indexSentences++;
+				        	
 				        	int start = wordIterator.first();
 				        	int end = wordIterator.next();
 				        	int counterWords = 0;
@@ -59,16 +78,15 @@ public class MyFileReader {
 				        		end = wordIterator.next();
 				        		
 				            }
-				        				        	
-				        	listSentence.add(new Sentence(counterWords, sentence));
 				        	
+				        	listSentence.add(new Sentence(counterWords, sentence));
 				        	
 				      }
 					
 				}
-				System.out.println("+++++++++++++++++++++++++");
-														
+															
 				input.close();
+				//System.out.println("+++++++++++++++++++++++++" + indexSentences);
 								
 				Collections.sort(listSentence, (o1, o2) -> o1.getCountWords() - o2.getCountWords());
 				
