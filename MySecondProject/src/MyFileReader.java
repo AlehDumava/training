@@ -15,7 +15,6 @@ import java.io.IOException;
 public class MyFileReader {
 
 
-
 	public static void main(String[] args) throws IOException {
 		
 		System.out.println("Start reading the file");
@@ -63,31 +62,14 @@ public class MyFileReader {
 				        				        	
 				        	listSentence.add(new Sentence(counterWords, sentence));
 				        	
-				        	//if (treeMap.containsKey(counterWords)) {
-				        		
-				        		//listSentence.add(sentence);
-				        		//treeMap.put(counterWords, listSentence);
-				        		//System.out.println(sentence);
-				        		//System.out.println("================================");
-				        		
-				        	//} else {
 				        	
-				        	//	treeMap.put(counterWords, listSentence);
-				        	//}
 				      }
 					
 				}
 				System.out.println("+++++++++++++++++++++++++");
-				
-										
+														
 				input.close();
 								
-				//for(Map.Entry<Integer, List<String>> element : treeMap.entrySet()) {
-					 
-				  //  System.out.println(element.getKey()+" "+ element.getValue());
-
-				//}
-				
 				Collections.sort(listSentence, (o1, o2) -> o1.getCountWords() - o2.getCountWords());
 				
 				for(Sentence element : listSentence) {
