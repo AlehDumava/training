@@ -28,7 +28,6 @@ public class MyFileReader {
 				BreakIterator splitIntoSentences = BreakIterator.getSentenceInstance();
 				BreakIterator wordIterator = BreakIterator.getWordInstance();
 				
-				//Map<Integer, List<String>> treeMap = new TreeMap<>();
 				List<Sentence> listSentence = new ArrayList<>();
 				
 				while((getString = input.readLine()) != null) {
