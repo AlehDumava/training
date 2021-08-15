@@ -1,6 +1,9 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.text.BreakIterator;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
@@ -15,7 +18,7 @@ public class MyFileReader {
 
 	public static void main(String[] args) throws IOException {
 		
-		System.out.println("Start copy file");
+		System.out.println("Start reading the file");
 		String path = "c://Users//User//git//training//MySecondProject//";
 		String getString;
 				
@@ -25,7 +28,8 @@ public class MyFileReader {
 				BreakIterator splitIntoSentences = BreakIterator.getSentenceInstance();
 				BreakIterator wordIterator = BreakIterator.getWordInstance();
 				
-				Map<Integer, String> treeMap = new TreeMap<>();
+				//Map<Integer, List<String>> treeMap = new TreeMap<>();
+				List<Sentence> listSentence = new ArrayList<>();
 				
 				while((getString = input.readLine()) != null) {
 									
@@ -36,7 +40,7 @@ public class MyFileReader {
 						
 				        String sentence = getString.substring(index, splitIntoSentences.current());
 				        index = splitIntoSentences.current();
-				        System.out.print(sentence);
+				       
 				        
 				        	wordIterator.setText(sentence);
 				        	int start = wordIterator.first();
@@ -49,7 +53,7 @@ public class MyFileReader {
 				        		if (Character.isLetter(word.charAt(0))) {
 				               		if (Character.isLetter(word.charAt(0))) {
 				               			if (Character.isLetter(word.charAt(0))) {
-				               				counterWords++;	        	    
+				               				counterWords++;	   						// Sentence number counter     	    
 				               			}
 				               		}	
 				        		}
@@ -57,8 +61,20 @@ public class MyFileReader {
 				        		end = wordIterator.next();
 				        		
 				            }
-				        	System.out.println("	Count words: " + counterWords);
-				        	treeMap.put(counterWords, sentence);
+				        				        	
+				        	listSentence.add(new Sentence(counterWords, sentence));
+				        	
+				        	//if (treeMap.containsKey(counterWords)) {
+				        		
+				        		//listSentence.add(sentence);
+				        		//treeMap.put(counterWords, listSentence);
+				        		//System.out.println(sentence);
+				        		//System.out.println("================================");
+				        		
+				        	//} else {
+				        	
+				        	//	treeMap.put(counterWords, listSentence);
+				        	//}
 				      }
 					
 				}
@@ -67,10 +83,17 @@ public class MyFileReader {
 										
 				input.close();
 								
-				for(Map.Entry<Integer, String> element : treeMap.entrySet()) {
+				//for(Map.Entry<Integer, List<String>> element : treeMap.entrySet()) {
 					 
-				    System.out.println(element.getKey()+" "+ element.getValue());
+				  //  System.out.println(element.getKey()+" "+ element.getValue());
 
+				//}
+				
+				Collections.sort(listSentence, (o1, o2) -> o1.getCountWords() - o2.getCountWords());
+				
+				for(Sentence element : listSentence) {
+					
+					System.out.println(element.getCountWords()+" "+ element.getCountSentences());
 				}
 			}
 			catch(FileNotFoundException e) {
