@@ -1,1 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<dimond_fund>
+	<stone id="Stone #1">
+		<name>Бриллиант</name>>
+		<preciousness>Драгоценный</preciousness>>
+		<origin>Африка</origin>
+		<visual_parameters>
+			<color>Бесцветный</color>
+			<opacity>100</opacity>
+			<way_faceting>15</way_faceting>
+		</visual_parameters>
+		<value>5</value>
+	</stone>
+	<stone id="Stone #2">
+		<name>Сапфир</name>>
+		<preciousness>Драгоценный</preciousness>>
+		<origin>Африка</origin>
+		<visual_parameters>
+			<color>Синий</color>
+			<opacity>95</opacity>
+			<way_faceting>5</way_faceting>
+		</visual_parameters>
+		<value>7</value>
+	</stone>
+	<stone id="Stone #3">
+		<name>Рубин</name>>
+		<preciousness>Драгоценный</preciousness>>
+		<origin>Зимбабве</origin>
+		<visual_parameters>
+			<color>Красный</color>
+			<opacity>100</opacity>
+			<way_faceting>13</way_faceting>
+		</visual_parameters>
+		<value>3</value>
+	</stone>
+	<stone id="Stone #4">
+		<name>Топаз</name>>
+		<preciousness>Полудрагоценный</preciousness>>
+		<origin>Бразилия</origin>
+		<visual_parameters>
+			<color>Синий</color>
+			<opacity>99</opacity>
+			<way_faceting>12</way_faceting>
+		</visual_parameters>
+		<value>3</value>
+	</stone>
+	<stone id="Stone #5">
+		<name>Опал</name>>
+		<preciousness>Полудрагоценный</preciousness>>
+		<origin>Австралия</origin>
+		<visual_parameters>
+			<color>Зеленый</color>
+			<opacity>60</opacity>
+			<way_faceting>14</way_faceting>
+		</visual_parameters>
+		<value>6</value>
+	</stone>
+</dimond_fund>
