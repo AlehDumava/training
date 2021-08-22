@@ -1,3 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/MyXMLSchema" xmlns:tns="http://www.example.org/MyXMLSchema" elementFormDefault="qualified">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/MyXMLSchema" 
+xmlns:tns="http://www.example.org/MyXMLSchema" elementFormDefault="qualified">
+	<element name="dimond_found">
+		<complexType>
+			<sequence>
+				<element name="stone" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="name" type="string" />
+							<element name="preciousness">
+								<simpleType>
+									<restriction base="string">
+										<enumeration value="Полудрагоценный"/>
+										<enumeration value="Драгоценный"/>
+									</restriction>
+								</simpleType>
+							</element>
+							<element name="origin" type="string"/>
+							<element name="visual_parameters">	
+								<complexType>
+									<sequence>
+										<element name="color">
+											<simpleType>
+												<restriction base="string">
+													<enumeration value="Бесцветный"/>
+													<enumeration value="Синий"/>
+													<enumeration value="Красный"/>
+													<enumeration value="Зеленый"/>
+												</restriction>
+											</simpleType>
+										</element>
+										<element name="opacity" minOccurs="0">
+											<simpleType>
+												<restriction base="byte">
+													<minInclusive value="0"/>
+													<maxInclusive value="100"/>
+												</restriction>
+											</simpleType>
+										</element>
+										<element name="way_faceting" minOccurs="1">
+											<simpleType>
+												<restriction base="byte">
+													<minInclusive value="4"/>
+													<maxInclusive value="14"/>
+												</restriction>
+											</simpleType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="value" minOccurs="1">
+								<simpleType>
+									<restriction base="int">
+										<minInclusive value="1"/>
+										<maxInclusive value="1000"/>
+									</restriction>
+								</simpleType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
 </schema>
