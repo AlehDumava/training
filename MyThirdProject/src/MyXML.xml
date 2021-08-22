@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dimond_fund>
+<dimond_fund xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.example.org/MyXMLSchema" 
+	xsi:schemaLocation="http://www.example.org/MyXML MyXMLSchema.xsd">
 	<stone id="Stone #1">
 		<name>Бриллиант</name>>
 		<preciousness>Драгоценный</preciousness>>

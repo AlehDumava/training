@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/MyXMLSchema" 
 xmlns:tns="http://www.example.org/MyXMLSchema" elementFormDefault="qualified">
-	<element name="dimond_found">
+	<element name="dimond_fund">
 		<complexType>
 			<sequence>
 				<element name="stone" maxOccurs="unbounded">
@@ -58,6 +58,7 @@ xmlns:tns="http://www.example.org/MyXMLSchema" elementFormDefault="qualified">
 								</simpleType>
 							</element>
 						</sequence>
+						<attribute name="id" type="string" use="required"/>
 					</complexType>
 				</element>
 			</sequence>
