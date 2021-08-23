@@ -42,7 +42,7 @@ xmlns:tns="http://www.example.org/MyXMLSchema" elementFormDefault="qualified">
 											<simpleType>
 												<restriction base="byte">
 													<minInclusive value="4"/>
-													<maxInclusive value="14"/>
+													<maxInclusive value="15"/>
 												</restriction>
 											</simpleType>
 										</element>
@@ -51,9 +51,9 @@ xmlns:tns="http://www.example.org/MyXMLSchema" elementFormDefault="qualified">
 							</element>
 							<element name="value" minOccurs="1">
 								<simpleType>
-									<restriction base="int">
+									<restriction base="integer">
 										<minInclusive value="1"/>
-										<maxInclusive value="1000"/>
+										<maxInclusive value="100"/>
 									</restriction>
 								</simpleType>
 							</element>
