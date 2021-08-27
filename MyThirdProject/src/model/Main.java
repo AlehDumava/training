@@ -18,15 +18,15 @@ public class Main {
 		
 		Stone stone = new Stone();
 		
-		File file = new File("c://Users//User//git//training//MyThirdProject//src//MyXML.xml");
+		File file = new File("MyXML.xml");
 		
-		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();	// Building DOM parser (JSDK)
 		
 		Document doc = null;
 		
 		try {
 			
-			doc = dbf.newDocumentBuilder().parse(file);
+			doc = dbf.newDocumentBuilder().parse(file);	// Recognition XML document
 					
 		} catch (IOException e) {
 			
