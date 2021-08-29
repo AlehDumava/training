@@ -31,38 +31,40 @@ public class Main {
 		} catch (IOException e) {
 			
 			e.printStackTrace();
+			System.out.println("Open the file error!" + e.toString());
 			return;
 			
 		} catch (ParserConfigurationException e) {
 			
 			e.printStackTrace();
+			System.out.println("Parsing the file error!" + e.toString());
 			return;
 		}
 		
-		Node rootNode = doc.getFirstChild();
+		Node dimondFund = doc.getFirstChild();
+		System.out.println("RootNode = " + dimondFund.getNodeName());
 		
-		System.out.println("RootNode = " + rootNode.getNodeName());
 		
-		NodeList rootChilds = rootNode.getChildNodes();
+		NodeList dimondFundChilds = dimondFund.getChildNodes();
 		
-		for(int i = 0; i < rootChilds.getLength(); i++ ) {
+		for(int i = 0; i < dimondFundChilds.getLength(); i++ ) {
 			
-			if(rootChilds.item(i).getNodeType() != Node.ELEMENT_NODE) {
+			if(dimondFundChilds.item(i).getNodeType() != Node.ELEMENT_NODE) {
 				continue;
 			}
 			
-			if(!rootChilds.item(i).getNodeName().equals("stone")) {
+			if(!dimondFundChilds.item(i).getNodeName().equals("stone")) {
 				System.out.println("RootChilds != stone");
 				continue;
 			}
-				
+			System.out.println("-------------------");	
 			
 			String name;
 			String presiousness;
 			String origin;
 			Integer value;
 		
-			NodeList stoneChilds = rootChilds.item(i).getChildNodes();
+			NodeList stoneChilds = dimondFundChilds.item(i).getChildNodes();
 					
 			for(int j = 0; j < stoneChilds.getLength(); j++ ) {
 			
@@ -74,26 +76,60 @@ public class Main {
 			
 					case "name": {
 						name = stoneChilds.item(j).getTextContent();
-						System.out.println("StoneChild " + stoneChilds.item(j).getNodeName() + " == " + name);
+						System.out.println(" StoneChild " + stoneChilds.item(j).getNodeName() + " == " + name);
 						break;
 					}
 					case "preciousness": {
 						presiousness = stoneChilds.item(j).getTextContent();
-						System.out.println("StoneChild " + stoneChilds.item(j).getNodeName() + " == " + presiousness);
+						System.out.println(" StoneChild " + stoneChilds.item(j).getNodeName() + " == " + presiousness);
 						break;
 					}
 					case "origin": {
 						origin = stoneChilds.item(j).getTextContent();
-						System.out.println("StoneChild " + stoneChilds.item(j).getNodeName() + " == " + origin);
+						System.out.println(" StoneChild " + stoneChilds.item(j).getNodeName() + " == " + origin);
 						break;
 					}
 					case "value": {
 						value = Integer.valueOf(stoneChilds.item(j).getTextContent());
-						System.out.println("StoneChild " + stoneChilds.item(j).getNodeName() + " == " + value);
+						System.out.println(" StoneChild " + stoneChilds.item(j).getNodeName() + " == " + value);
 						break;
 					}
 				}
 			
+								
+				String	color;
+				Byte	opacity;
+				Byte	wayFaceting;
+				
+				NodeList visualParametersChilds = stoneChilds.item(j).getChildNodes();
+			
+				for(int k = 0; k < visualParametersChilds.getLength(); k++ ) {
+			
+					if(visualParametersChilds.item(k).getNodeType() != Node.ELEMENT_NODE) {
+						continue;
+					}
+							
+					switch(visualParametersChilds.item(k).getNodeName()) {
+			
+						case "color": {
+							color = visualParametersChilds.item(k).getTextContent();
+							System.out.println("  Visual Parameters Child " + visualParametersChilds.item(k).getNodeName() + " == " + color);
+							break;
+						}
+						case "opacity": {
+							opacity = Byte.valueOf(visualParametersChilds.item(k).getTextContent());
+							System.out.println("  Visual Parameters Child " + visualParametersChilds.item(k).getNodeName() + " == " + opacity);
+							break;
+						}
+						case "way_faceting": {
+							wayFaceting = Byte.valueOf(visualParametersChilds.item(k).getTextContent());
+							System.out.println("  Visual Parameters Child " + visualParametersChilds.item(k).getNodeName() + " == " + wayFaceting);
+							break;
+						}
+					
+					}
+			
+				}
 			}
 	
 		}
