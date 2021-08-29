@@ -1,38 +1,21 @@
 package model;
 
-import java.util.List;
 
 public class Stone {
 	
+	private String attribute;
 	private String name;
 	private String preciousness;
 	private String origin;
+	private String color;
+	private byte opacity;
+	private byte wayFaceting;
 	private Integer value;
 	
-	private List<VisualParameters> visualParameters;
-	
-	
-	public String getName() {
-		return name;
+		
+	public void setAttribute(String attribute) {
+		this.attribute = attribute;
 	}
-
-	public String getPreciousness() {
-		return preciousness;
-	}
-
-	public String getOrigin() {
-		return origin;
-	}
-
-	public Integer getValue() {
-		return value;
-	}
-
-	public List<VisualParameters> getVisualParameters() {
-		return visualParameters;
-	}
-
-	
 
 
 	public void setName(String name) {
@@ -40,11 +23,9 @@ public class Stone {
 	}
 
 
-
 	public void setPreciousness(String preciousness) {
 		this.preciousness = preciousness;
 	}
-
 
 
 	public void setOrigin(String origin) {
@@ -52,21 +33,72 @@ public class Stone {
 	}
 
 
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+
+	public void setOpacity(byte opacity) {
+		this.opacity = opacity;
+	}
+
+
+	public void setWayFaceting(byte wayFaceting) {
+		this.wayFaceting = wayFaceting;
+	}
+
 
 	public void setValue(Integer value) {
 		this.value = value;
 	}
-
-
-
-	public void setVisualParameters(List<VisualParameters> visualParameters) {
-		this.visualParameters = visualParameters;
-	}
+	
+	
 	
 	@Override
 	public String toString() {
-		return "Stone [name=" + name + ", preciousness=" + preciousness + ", origin=" + origin + ", value=" + value
-				+ ", visualParameters=" + visualParameters + "]";
+		return "Stone <id> = " + attribute + "\n\t <name> " + name + "\n\t <preciousness> " + preciousness + "\n\t <origin> " + origin + "\n\t\t" +
+				"VisualParameters \n\t\t <color> " + color + "\n\t\t <opacity> " + opacity + "\n\t\t <wayFaceting> " + wayFaceting +
+				 "\n\t <value> " + value + "\n";
+	}
+
+
+	public String getAttribute() {
+		return attribute;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public String getPreciousness() {
+		return preciousness;
+	}
+
+
+	public String getOrigin() {
+		return origin;
+	}
+
+
+	public String getColor() {
+		return color;
+	}
+
+
+	public byte getOpacity() {
+		return opacity;
+	}
+
+
+	public byte getWayFaceting() {
+		return wayFaceting;
+	}
+
+
+	public Integer getValue() {
+		return value;
 	}
 
 }

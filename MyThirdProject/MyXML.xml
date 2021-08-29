@@ -2,7 +2,7 @@
 <dimond_fund xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://www.example.org/MyXMLSchema" 
 	xsi:schemaLocation="http://www.example.org/MyXML MyXMLSchema.xsd">
-	<stone id="Stone #1">
+	<stone id="Stone 1">
 		<name>Бриллиант</name>>
 		<preciousness>Драгоценный</preciousness>>
 		<origin>Африка</origin>
@@ -13,7 +13,7 @@
 		</visual_parameters>
 		<value>5</value>
 	</stone>
-	<stone id="Stone #2">
+	<stone id="Stone 2">
 		<name>Сапфир</name>>
 		<preciousness>Драгоценный</preciousness>>
 		<origin>Африка</origin>
@@ -24,7 +24,7 @@
 		</visual_parameters>
 		<value>7</value>
 	</stone>
-	<stone id="Stone #3">
+	<stone id="Stone 3">
 		<name>Рубин</name>>
 		<preciousness>Драгоценный</preciousness>>
 		<origin>Зимбабве</origin>
@@ -35,7 +35,7 @@
 		</visual_parameters>
 		<value>3</value>
 	</stone>
-	<stone id="Stone #4">
+	<stone id="Stone 4">
 		<name>Топаз</name>>
 		<preciousness>Полудрагоценный</preciousness>>
 		<origin>Бразилия</origin>
@@ -46,7 +46,7 @@
 		</visual_parameters>
 		<value>3</value>
 	</stone>
-	<stone id="Stone #5">
+	<stone id="Stone 5">
 		<name>Опал</name>>
 		<preciousness>Полудрагоценный</preciousness>>
 		<origin>Австралия</origin>

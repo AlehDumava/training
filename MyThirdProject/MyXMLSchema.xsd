@@ -5,9 +5,9 @@ xmlns:tns="http://www.example.org/MyXMLSchema" elementFormDefault="qualified">
 		<complexType>
 			<sequence>
 				<element name="stone" maxOccurs="unbounded">
-					<complexType>
+					<complexType mixed="true">
 						<sequence>
-							<element name="name" type="string" />
+							<element name="name" type="string"/>
 							<element name="preciousness">
 								<simpleType>
 									<restriction base="string">

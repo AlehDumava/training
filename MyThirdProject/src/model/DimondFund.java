@@ -6,10 +6,6 @@ public class DimondFund {
 	
 	private List<Stone> stone;
 	
-	public DimondFund(List<Stone> stone) {
-		super();
-		this.stone = stone;
-	}
 
 	public List<Stone> getStone() {
 		return stone;
@@ -21,8 +17,9 @@ public class DimondFund {
 
 	@Override
 	public String toString() {
-		return "DimondFund -- Stone = " + getStone();
+		return "DimondFund --" + stone;
 	}
+	
 
 
 	
