@@ -1,16 +1,20 @@
 package domain;
 
 public class Account extends Entity {
-	private String client;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String name;
     private Long balance;
    // private List<Transfer> history;
 
-    public String getClient() {
-        return client;
+    public String getName() {
+        return name;
     }
 
-    public void setClient(String client) {
-        this.client = client;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Long getBalance() {
