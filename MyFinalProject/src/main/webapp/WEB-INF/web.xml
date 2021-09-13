@@ -7,7 +7,7 @@
   version="5.0"
   metadata-complete="true">
   
-<description>Servlet and JSP Examples</description>
+<description>MyServlet and JSP Examples</description>
 <display-name>My final project</display-name>
 
   	<servlet>
