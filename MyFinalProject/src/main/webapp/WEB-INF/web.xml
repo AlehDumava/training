@@ -14,11 +14,33 @@
   		<servlet-name>MyServlet</servlet-name>		
   		<servlet-class>web.MyServlet</servlet-class>
   	</servlet>
+  	<servlet>
+  		<description>
+  		</description>
+  		<display-name>LogoutServlet</display-name>
+  		<servlet-name>LogoutServlet</servlet-name>
+  		<servlet-class>servlet.LogoutServlet</servlet-class>
+  	</servlet>
+  	<servlet>
+  		<description>
+  		</description>
+  		<display-name>UserInfoServlet</display-name>
+  		<servlet-name>UserInfoServlet</servlet-name>
+  		<servlet-class>servlet.UserInfoServlet</servlet-class>
+  	</servlet>
   	
     <servlet-mapping>
   		<servlet-name>MyServlet</servlet-name>
   		<url-pattern>/MyServlet</url-pattern>
   	</servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>LogoutServlet</servlet-name>
+    	<url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>UserInfoServlet</servlet-name>
+    	<url-pattern>/UserInfoServlet</url-pattern>
+    </servlet-mapping>
   	
   	<welcome-file-list>
   		<welcome-file>autorisation.html</welcome-file>
