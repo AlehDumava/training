@@ -9,7 +9,7 @@ import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.RequestDispatcher;
 
-	@WebServlet("/userInfo")
+	//@WebServlet("/userInfo")
 	public class UserInfoServlet extends HttpServlet {
         
 		private static final long serialVersionUID = 1L;

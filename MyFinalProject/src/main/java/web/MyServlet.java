@@ -11,7 +11,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 
-@WebServlet("/MyServlet")
+//@WebServlet(urlPatterns = "/MyServlet")
+
 
 public class MyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -36,7 +37,7 @@ public class MyServlet extends HttpServlet {
 		   PrintWriter printWriter = response.getWriter();
 		   
 	       if (username == null) {
-	           printWriter.write("Hello, Anonymous" + "<br>");
+	           printWriter.write("HELLO, Anonymous" + "<br>");
 	       } else {
 	           printWriter.write("Hello, " + username + "<br>");
 	       }

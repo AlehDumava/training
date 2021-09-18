@@ -10,7 +10,7 @@ import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
-import jakarta.servlet.annotation.WebFilter;
+
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -19,7 +19,7 @@ import request.UserRoleRequestWrapper;
 import utils.AppUtils;
 import utils.SecurityUtils;
 
-	@WebFilter("/*")
+	//@WebFilter("/*")
 	public class SecurityFilter implements Filter {
 
 		public SecurityFilter() {
@@ -54,11 +54,9 @@ import utils.SecurityUtils;
 				
 				if (SecurityUtils.isSecurityPage(request)) {
 
-					
 					if (loginedUser == null) {
 
 						String requestUri = request.getRequestURI();
-
 						
 						int redirectId = AppUtils.storeRedirectAfterLoginUrl(request.getSession(), requestUri);
 
@@ -69,8 +67,7 @@ import utils.SecurityUtils;
 					boolean hasPermission = SecurityUtils.hasPermission(wrapRequest);
 					if (!hasPermission) {
 
-						RequestDispatcher dispatcher //
-								= request.getServletContext().getRequestDispatcher("/WEB-INF/views/accessDeniedView.jsp");
+						RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/WEB-INF/views/accessDeniedView.jsp");
 
 						dispatcher.forward(request, response);
 						return;

@@ -21,7 +21,7 @@ import config.SecurityConfig;
 			            SecurityConfig.ROLE_ENROLLEE);
 
 			      // This user has a role a ADMINISTRATOR.
-			      UserAccount admin = new UserAccount("administrator", "root", //
+			      UserAccount admin = new UserAccount("admin", "root", //
 			            SecurityConfig.ROLE_ADMINISTRATOR);
 
 			      mapUsers.put(enrollee.getUserName(), enrollee);
