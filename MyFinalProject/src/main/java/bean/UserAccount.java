@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-	public class UserAccount {			// Класс UserAccount представляет пользователя приложения
+	public class UserAccount {			
 		
 		private String userName;
 		private String password;

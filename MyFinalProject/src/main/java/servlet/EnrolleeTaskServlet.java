@@ -20,9 +20,7 @@ public class EnrolleeTaskServlet extends HttpServlet {
    protected void doGet(HttpServletRequest request, HttpServletResponse response)
          throws ServletException, IOException {
 
-      RequestDispatcher dispatcher //
-            = this.getServletContext()//
-                  .getRequestDispatcher("/WEB-INF/views/enrolleeTaskView.jsp");
+      RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/enrolleeTaskView.jsp");
 
       dispatcher.forward(request, response);
    }

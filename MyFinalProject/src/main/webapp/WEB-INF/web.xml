@@ -65,21 +65,23 @@
         <servlet-name>UserInfoServlet</servlet-name>
         <url-pattern>/userInfo</url-pattern>
     </servlet-mapping>
+    
     <servlet-mapping>
         <servlet-name>SecurityFilter</servlet-name>
-        <url-pattern></url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
+    
     <servlet-mapping>
     	<servlet-name>AdminTaskServlet</servlet-name>
     	<url-pattern>/adminTask</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
     	<servlet-name>EnrolleeTaskServlet</servlet-name>
-    	<url-pattern>/EnrolleeTask</url-pattern>
+    	<url-pattern>/enrolleeTask</url-pattern>
     </servlet-mapping> 	
   	
   	<welcome-file-list>
-  		<welcome-file>/</welcome-file>
+  		<welcome-file>/index</welcome-file>
   		
   	</welcome-file-list>
   	
