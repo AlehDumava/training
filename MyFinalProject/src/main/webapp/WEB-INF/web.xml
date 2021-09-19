@@ -31,10 +31,12 @@
         <servlet-name>UserInfoServlet</servlet-name>
         <servlet-class>servlet.UserInfoServlet</servlet-class>
  </servlet>
- <servlet>
-        <servlet-name>SecurityFilter</servlet-name>
-        <servlet-class>filter.SecurityFilter</servlet-class>
- </servlet>
+ 
+ <filter>
+        <filter-name>SecurityFilter</filter-name>
+        <filter-class>filter.SecurityFilter</filter-class>
+ </filter>
+ 
  <servlet>
  	<servlet-name>AdminTaskServlet</servlet-name>
  	<servlet-class>servlet.AdminTaskServlet</servlet-class>
@@ -52,6 +54,7 @@
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/index</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -66,10 +69,10 @@
         <url-pattern>/userInfo</url-pattern>
     </servlet-mapping>
     
-    <servlet-mapping>
-        <servlet-name>SecurityFilter</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
+    <filter-mapping>
+        <filter-name>SecurityFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     
     <servlet-mapping>
     	<servlet-name>AdminTaskServlet</servlet-name>
