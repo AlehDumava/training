@@ -1,9 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ 
+    <%@ page import="jakarta.servlet.jsp.*"%>
+   
+    
 <!DOCTYPE html>
 <html>
    <head>
       <meta charset="UTF-8">
+     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css" />
       <title>Home Page</title>
    </head>
    <body>

@@ -1,12 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" session = "true" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <%@ page isELIgnored="false"%>
+<%@ page import="jakarta.servlet.jsp.*"%>
+
+ 
     
 <!DOCTYPE html>
 <html>
    <head>
-      <meta charset="UTF-8">
-      <title>Login</title>
+   		<meta charset="UTF-8">
+   		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleView.css" />
+      	<title>Login</title>
    </head>
    <body>
 
@@ -16,16 +21,16 @@
 
       <p style="color: red;">${errorString}</p>
 
-      <form method="POST" action="${pageContext.request.contextPath}/login">
+      <form action="${pageContext.request.contextPath}/login" method="POST" >
          <input type="hidden" name="redirectId" value="${param.redirectId}"/>
          <table border="1">
             <tr>
                <td>User Name</td>
-               <td><input type="text" name="userName" value= "${user.userName}" /> </td>
+               <td><input tabindex="1" placeholder="user name" type="text" name="userName" value= "${user.userName}" /> </td>
             </tr>
             <tr>
                <td>Password</td>
-               <td><input type="password" name="password" value= "${user.password}" /> </td>
+               <td><input tabindex="2" placeholder="passvord" type="password" name="password" value= "${user.password}" /> </td>
             </tr>
          
             <tr>
@@ -39,10 +44,9 @@
 
       <p style="color:blue;">Login with:</p>
       
-      enrollee/1234 <br>
-      admin/root
-     
- 
+      <p> enrollee/1234 </p>
+      <p> admin/root </p>
+  
 
    </body>
 </html>
