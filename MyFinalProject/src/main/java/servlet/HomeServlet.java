@@ -19,10 +19,9 @@ import jakarta.servlet.ServletException;
 		@Override
 		protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-			
-		      
-		     RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/homeView.jsp");
-
+			// Forward to /WEB-INF/views/homeView.jsp
+		    // (Users can not access directly into JSP pages placed in WEB-INF)
+			RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/homeView.jsp");
         	dispatcher.forward(request, response);
 		}
 

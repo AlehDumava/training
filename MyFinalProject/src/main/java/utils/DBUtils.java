@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,44 +14,39 @@ import beans.Enrollee;
 public class DBUtils {
 	
 	public static UserAccount findUser(Connection conn, //
-			String userName, String password) throws SQLException {
+			String login, String password) throws SQLException {
 
-		String sql = "Select a.User_Name, a.Password, a.Gender from User_Account a " //
-				+ " where a.User_Name = ? and a.password= ?";
+		Statement statement = conn.createStatement();
+		String sql = "SELECT login, password FROM users";
+		ResultSet resultSet = statement.executeQuery(sql);
+		//statement.setString(1, login);
+		//statement.setString(2, password);
+		
 
-		PreparedStatement pstm = conn.prepareStatement(sql);
-		pstm.setString(1, userName);
-		pstm.setString(2, password);
-		ResultSet rs = pstm.executeQuery();
-
-		if (rs.next()) {
-			//String gender = rs.getString("Gender");
+		if (resultSet.next()) {
 			UserAccount user = new UserAccount();
-			user.setUserName(userName);
+			user.setLogin(login);
 			user.setPassword(password);
-			//user.setGender(gender);
 			return user;
 		}
+		System.out.println("findUser == NULL");
 		return null;
 	}
 
-	public static UserAccount findUser(Connection conn, String userName) throws SQLException {
+	public static UserAccount findUser(Connection conn, String login) throws SQLException {
 
-		String sql = "Select a.User_Name, a.Password, a.Gender from User_Account a "//
-				+ " where a.User_Name = ? ";
+		String sql = "Select login, password from users";
 
 		PreparedStatement pstm = conn.prepareStatement(sql);
-		pstm.setString(1, userName);
+		pstm.setString(1, login);
 
 		ResultSet rs = pstm.executeQuery();
 
 		if (rs.next()) {
-			String password = rs.getString("Password");
-			//String gender = rs.getString("Gender");
+			String password = rs.getString("password");
 			UserAccount user = new UserAccount();
-			user.setUserName(userName);
+			user.setLogin(login);
 			user.setPassword(password);
-			//user.setGender(gender);
 			return user;
 		}
 		return null;

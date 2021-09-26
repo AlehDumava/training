@@ -6,7 +6,7 @@ import java.util.List;
 
 	public class UserAccount {			
 		
-		private String userName;
+		private String login;
 		private String password;
 
 		private List<String> roles;
@@ -15,8 +15,8 @@ import java.util.List;
 
 	   }
 	
-		public UserAccount(String userName, String password, String... roles) {
-			this.userName = userName;
+		public UserAccount(String login, String password, String... roles) {
+			this.login = login;
 			this.password = password;
 	      
 			this.roles = new ArrayList<String>();
@@ -27,12 +27,12 @@ import java.util.List;
 			}
 	   }
 	
-		public String getUserName() {
-			return userName;
+		public String getLogin() {
+			return login;
 	   }
 
-	   public void setUserName(String userName) {
-		   this.userName = userName;
+	   public void setLogin(String userName) {
+		   this.login = userName;
 	   }
 
 	   public String getPassword() {

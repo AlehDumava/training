@@ -26,7 +26,7 @@
          <table border="1">
             <tr>
                <td>User Name</td>
-               <td><input tabindex="1" placeholder="user name" type="text" name="userName" value= "${user.userName}" /> </td>
+               <td><input tabindex="1" placeholder="user name" type="text" name="login" value= "${user.login}" /> </td>
             </tr>
             <tr>
                <td>Password</td>

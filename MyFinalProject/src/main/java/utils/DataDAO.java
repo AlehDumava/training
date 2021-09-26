@@ -24,8 +24,8 @@ import config.SecurityConfig;
 			      UserAccount admin = new UserAccount("admin", "root", //
 			            SecurityConfig.ROLE_ADMINISTRATOR);
 
-			      mapUsers.put(enrollee.getUserName(), enrollee);
-			      mapUsers.put(admin.getUserName(), admin);
+			      mapUsers.put(enrollee.getLogin(), enrollee);
+			      mapUsers.put(admin.getLogin(), admin);
 			   }
 
 			   // Find a User by userName and password.
