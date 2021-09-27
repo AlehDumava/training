@@ -3,27 +3,18 @@ package filter;
 import java.io.IOException;
 import java.sql.Connection;
 import java.util.Collection;
-import java.util.List;
 import java.util.Map;
-
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.FilterConfig;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRegistration;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
-import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-
-import bean.UserAccount;
 import conn.ConnectionUtils;
-import request.UserRoleRequestWrapper;
-import utils.AppUtils;
 import utils.MyUtils;
-import utils.SecurityUtils;
+
 
 	//@WebFilter("/*")
 	public class SecurityFilter implements Filter {

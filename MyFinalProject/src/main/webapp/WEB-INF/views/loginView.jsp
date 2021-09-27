@@ -26,11 +26,11 @@
          <table border="1">
             <tr>
                <td>User Name</td>
-               <td><input tabindex="1" placeholder="user name" type="text" name="login" value= "${user.login}" /> </td>
+               <td><input tabindex="1" placeholder="login" type="text" name="login" value= "${user.login}" /> </td>
             </tr>
             <tr>
                <td>Password</td>
-               <td><input tabindex="2" placeholder="passvord" type="password" name="password" value= "${user.password}" /> </td>
+               <td><input tabindex="2" placeholder="password" type="password" name="password" value= "${user.password}" /> </td>
             </tr>
          
             <tr>

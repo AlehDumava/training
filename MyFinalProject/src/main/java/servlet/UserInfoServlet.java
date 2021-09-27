@@ -1,11 +1,15 @@
 package servlet;
 
-import jakarta.servlet.annotation.WebServlet;
+
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import utils.MyUtils;
 
 import java.io.IOException;
+
+import bean.UserAccount;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.RequestDispatcher;
 
@@ -20,17 +24,33 @@ import jakarta.servlet.RequestDispatcher;
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		      RequestDispatcher dispatcher //
-		            = this.getServletContext().getRequestDispatcher("/WEB-INF/views/userInfoView.jsp");
-
-		      dispatcher.forward(request, response);
-		   }
-
-		   @Override
-		   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		      
-		      doGet(request, response);
-		   }
 		
+		HttpSession session = request.getSession();
+		// Проверить, вошел ли пользователь в систему (login) или нет.
+		UserAccount loginedUser = MyUtils.getLoginedUser(session);
+		
+		
+		// Если еще не вошел в систему (login).
+				if (loginedUser == null) {
+					// Redirect (Перенаправить) к странице login.
+					response.sendRedirect(request.getContextPath() + "/login");
+					return;
+				}
+				// Сохранить информацию в request attribute перед тем как forward (перенаправить).
+				request.setAttribute("user", loginedUser);
+
+				// Если пользователь уже вошел в систему (login), то forward (перенаправить) к странице
+				// /WEB-INF/views/userInfoView.jsp
+				RequestDispatcher dispatcher //
+						= this.getServletContext().getRequestDispatcher("/WEB-INF/views/userInfoView.jsp");
+				dispatcher.forward(request, response);
+
+			}
+
+			@Override
+			protected void doPost(HttpServletRequest request, HttpServletResponse response)
+					throws ServletException, IOException {
+				doGet(request, response);
+			}
 	
 }

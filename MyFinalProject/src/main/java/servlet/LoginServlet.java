@@ -32,7 +32,7 @@ import utils.MyUtils;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// Forward to the page /WEB-INF/views/loginView.jsp
-		RequestDispatcher dispatcher //
+		RequestDispatcher dispatcher 
 				= this.getServletContext().getRequestDispatcher("/WEB-INF/views/loginView.jsp");
 
 		dispatcher.forward(request, response);
@@ -120,9 +120,9 @@ import utils.MyUtils;
 				// Сохранить информацию пользователя в Session.
 				// И перенаправить к странице userInfo.
 				else {
-					HttpSession session = request.getSession();
-					MyUtils.storeLoginedUser(session, user);
-					response.sendRedirect(request.getContextPath() + "/userInfo");
+						HttpSession session = request.getSession();
+						MyUtils.storeLoginedUser(session, user);
+						response.sendRedirect(request.getContextPath() + "/userInfo");
 				}
 		
 	}

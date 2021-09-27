@@ -1,38 +1,31 @@
 package bean;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 
 	public class UserAccount {			
 		
 		private String login;
 		private String password;
-
-		private List<String> roles;
+		private String roles;
 
 		public UserAccount() {
 
 	   }
 	
-		public UserAccount(String login, String password, String... roles) {
+		public UserAccount(String login, String password, String roles) {
 			this.login = login;
 			this.password = password;
-	      
-			this.roles = new ArrayList<String>();
-			if (roles != null) {
-				for (String r : roles) {
-					this.roles.add(r);
-				}
-			}
+			this.roles = roles;
+			
 	   }
 	
 		public String getLogin() {
 			return login;
 	   }
 
-	   public void setLogin(String userName) {
-		   this.login = userName;
+	   public void setLogin(String login) {
+		   this.login = login;
 	   }
 
 	   public String getPassword() {
@@ -43,11 +36,11 @@ import java.util.List;
 		   this.password = password;
 	   }
 
-	   public List<String> getRoles() {
+	   public String getRoles() {
 	      return roles;
 	   }
 
-	   public void setRoles(List<String> roles) {
+	   public void setRoles(String roles) {
 	      this.roles = roles;
 	   }
 }

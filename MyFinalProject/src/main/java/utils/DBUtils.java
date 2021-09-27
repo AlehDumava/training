@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,40 +12,45 @@ import beans.Enrollee;
 
 public class DBUtils {
 	
-	public static UserAccount findUser(Connection conn, //
+	public static UserAccount findUser(Connection conn, 
 			String login, String password) throws SQLException {
 
-		Statement statement = conn.createStatement();
-		String sql = "SELECT login, password FROM users";
-		ResultSet resultSet = statement.executeQuery(sql);
-		//statement.setString(1, login);
-		//statement.setString(2, password);
-		
+		String sql = "Select a.login, a.password, a.id_role from users a " 
+				+ " where a.login = ? and a.password= ?";
 
-		if (resultSet.next()) {
+		PreparedStatement pstm = conn.prepareStatement(sql);
+		pstm.setString(1, login);
+		pstm.setString(2, password);
+		ResultSet rs = pstm.executeQuery();
+	    
+		while (rs.next()) {
+			String id_role = rs.getString("id_role");
 			UserAccount user = new UserAccount();
 			user.setLogin(login);
 			user.setPassword(password);
+			user.setRoles(id_role);
 			return user;
 		}
-		System.out.println("findUser == NULL");
 		return null;
 	}
 
 	public static UserAccount findUser(Connection conn, String login) throws SQLException {
 
-		String sql = "Select login, password from users";
+		String sql = "Select a.login, a.password, a.id_role from users a "
+				+ "	where a.login = ?";
 
 		PreparedStatement pstm = conn.prepareStatement(sql);
 		pstm.setString(1, login);
 
 		ResultSet rs = pstm.executeQuery();
 
-		if (rs.next()) {
+		while (rs.next()) {
 			String password = rs.getString("password");
+			String id_role = rs.getString("id_role");
 			UserAccount user = new UserAccount();
 			user.setLogin(login);
 			user.setPassword(password);
+			user.setRoles(id_role);
 			return user;
 		}
 		return null;
