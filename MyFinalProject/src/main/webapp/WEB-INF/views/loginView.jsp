@@ -44,8 +44,8 @@
 
       <p style="color:blue;">Login with:</p>
       
-      <p> enrollee/1234 </p>
-      <p> admin/root </p>
+      <p> user/1234 </p>
+      <p> admin/admin </p>
   
 
    </body>
