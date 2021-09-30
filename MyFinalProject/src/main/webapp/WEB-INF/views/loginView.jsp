@@ -4,22 +4,23 @@
 <%@ page isELIgnored="false"%>
 <%@ page import="jakarta.servlet.jsp.*"%>
 
- 
     
 <!DOCTYPE html>
 <html>
    <head>
    		<meta charset="UTF-8">
-   		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleView.css" />
       	<title>Login</title>
+      	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/styleView.css" />
+      	<link rel="stylesheet" href="<c:url value='/css/styleView.css'/>">
    </head>
-   <body>
-
+   <body class="_body">
+		
       <jsp:include page="menu.jsp"></jsp:include>   
 
       <h3>Login Page</h3>
 
       <p style="color: red;">${errorString}</p>
+      <br/><br/>
 
       <form action="${pageContext.request.contextPath}/login" method="POST" >
          <input type="hidden" name="redirectId" value="${param.redirectId}"/>
@@ -47,6 +48,5 @@
       <p> user/1234 </p>
       <p> admin/admin </p>
   
-
    </body>
 </html>

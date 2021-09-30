@@ -38,7 +38,12 @@ img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
 
-.bigred{
-	font-size: 20px;
+h3{
+	font-size: 60px;
 	color: red;
+}
+
+div {
+	font-size: 30px;
+	color: blue;
 }
