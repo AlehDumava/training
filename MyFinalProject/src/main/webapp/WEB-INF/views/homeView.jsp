@@ -8,7 +8,7 @@
 <html>
    <head>
       <meta charset="UTF-8">
-     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css" />
+     <link rel="stylesheet" href="resources/css/style.css" type="text/css" />
       <title>Home Page</title>
    </head>
    <body>

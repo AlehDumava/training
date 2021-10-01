@@ -21,14 +21,17 @@
         <servlet-name>HomeServlet</servlet-name>
         <servlet-class>servlet.HomeServlet</servlet-class>
  </servlet>
+ 
  <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>servlet.LoginServlet</servlet-class>
  </servlet>
+ 
  <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>servlet.LogoutServlet</servlet-class>
  </servlet>
+ 
  <servlet>
         <servlet-name>UserInfoServlet</servlet-name>
         <servlet-class>servlet.UserInfoServlet</servlet-class>
@@ -43,6 +46,7 @@
  	<servlet-name>AdminTaskServlet</servlet-name>
  	<servlet-class>servlet.AdminTaskServlet</servlet-class>
  </servlet>
+ 
  <servlet>
  	<servlet-name>EnrolleeTaskServlet</servlet-name>
  	<servlet-class>servlet.EnrolleeTaskServlet</servlet-class>
@@ -58,14 +62,17 @@
         <url-pattern>/index</url-pattern>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
+    
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
+    
     <servlet-mapping>
         <servlet-name>UserInfoServlet</servlet-name>
         <url-pattern>/userInfo</url-pattern>
@@ -80,14 +87,19 @@
     	<servlet-name>AdminTaskServlet</servlet-name>
     	<url-pattern>/adminTask</url-pattern>
     </servlet-mapping>
+    
     <servlet-mapping>
     	<servlet-name>EnrolleeTaskServlet</servlet-name>
     	<url-pattern>/enrolleeTask</url-pattern>
     </servlet-mapping> 	
+    
+    <servlet-mapping>
+    	<servlet-name>default</servlet-name>
+    	<url-pattern>/resources/*</url-pattern>
+    </servlet-mapping>
   	
   	<welcome-file-list>
   		<welcome-file>/index</welcome-file>
-  		
   	</welcome-file-list>
   	
 </web-app>

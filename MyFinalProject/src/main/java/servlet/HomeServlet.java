@@ -21,7 +21,7 @@ import jakarta.servlet.ServletException;
             throws ServletException, IOException {
 			// Forward to /WEB-INF/views/homeView.jsp
 		    // (Users can not access directly into JSP pages placed in WEB-INF)
-			RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/homeView.jsp");
+			RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/menu.jsp");
         	dispatcher.forward(request, response);
 		}
 

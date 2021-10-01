@@ -6,47 +6,42 @@
 
     
 <!DOCTYPE html>
-<html>
    <head>
    		<meta charset="UTF-8">
       	<title>Login</title>
-      	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/styleView.css" />
-      	<link rel="stylesheet" href="<c:url value='/css/styleView.css'/>">
+      	<meta name="description" content="">
+      	<meta name="viewport" content="width=device-width, initial-scale=1">
+      	<link rel="stylesheet" type="text/css" href="resources/css/styleLogin.css" />
    </head>
-   <body class="_body">
+   <body>
 		
       <jsp:include page="menu.jsp"></jsp:include>   
 
-      <h3>Login Page</h3>
-
-      <p style="color: red;">${errorString}</p>
-      <br/><br/>
-
-      <form action="${pageContext.request.contextPath}/login" method="POST" >
-         <input type="hidden" name="redirectId" value="${param.redirectId}"/>
-         <table border="1">
-            <tr>
-               <td>User Name</td>
-               <td><input tabindex="1" placeholder="login" type="text" name="login" value= "${user.login}" /> </td>
-            </tr>
-            <tr>
-               <td>Password</td>
-               <td><input tabindex="2" placeholder="password" type="password" name="password" value= "${user.password}" /> </td>
-            </tr>
-         
-            <tr>
-               <td colspan ="2">
-                  <input type="submit" value= "Submit" />
-                  <a href="${pageContext.request.contextPath}/">Cancel</a>
-               </td>
-            </tr>
-         </table>
+      <form class="box" action="${pageContext.request.contextPath}/login" method="POST" >
+      	<h1>Ligin</h1>
+      		<input placeholder="User name" type="text" name="login" value= "${user.login}" />
+      		<input placeholder="password" type="password" name="password" value= "${user.password}" />
+      		<input type="submit" name="" value="Login" />
       </form>
-
-      <p style="color:blue;">Login with:</p>
-      
-      <p> user/1234 </p>
-      <p> admin/admin </p>
-  
+      		
+<%--          <input type="hidden" name="redirectId" value="${param.redirectId}"/> --%>
+<!--          <table border="1"> -->
+<!--             <tr> -->
+<!--                <td>User Name</td> -->
+<%--                <td><input tabindex="1" placeholder="login" type="text" name="login" value= "${user.login}" /> </td> --%>
+<!--             </tr> -->
+<!--             <tr> -->
+<!--                <td>Password</td> -->
+<%--                <td><input tabindex="2" placeholder="password" type="password" name="password" value= "${user.password}" /> </td> --%>
+<!--             </tr> -->
+         
+<!--             <tr> -->
+<!--                <td colspan ="2"> -->
+<!--                   <input type="submit" value= "Submit" /> -->
+<%--                   <a href="${pageContext.request.contextPath}/">Cancel</a> --%>
+<!--                </td> -->
+<!--             </tr> -->
+<!--          </table> -->
+<!--       </form> -->
+        
    </body>
-</html>

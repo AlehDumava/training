@@ -4,17 +4,31 @@
 <%@ page isELIgnored="false"%>
 <%@ page import="jakarta.servlet.jsp.PageContext"%>
 
-<div style="padding: 5px;">
-<a href="${pageContext.request.contextPath}/enrolleeTask"> Enrollee Task </a>
-||
-<a href="${pageContext.request.contextPath}/adminTask"> Admin Task </a>
-||
-<a href="${pageContext.request.contextPath}/userInfo"> User Info </a>       
-||
-<a href="${pageContext.request.contextPath}/login"> Login </a>
-||
-<a href="${pageContext.request.contextPath}/logout"> Logout </a>
-
+<!DOCTYPE html>
+   <head>
+   		<meta charset="UTF-8">
+   		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+      	<title>Menu</title>
+      	<meta name="description" content="">
+      	<meta name="viewport" content="width=device-width, initial-scale=1">
+      	<link rel="stylesheet" type="text/css" href="resources/css/styleMenu.css" />
+   </head>
+   <body>
+		<header>
+			<img class="logo" alt="logo" src="resources/img/education-icon-3.jpg" width="50">
+			<nav>
+				<ul class="nav_links">
+					<li><a href="${pageContext.request.contextPath}/enrolleeTask">Enrollee</a></li>
+					<li><a href="${pageContext.request.contextPath}/adminTask">Admin</a></li>
+					<li><a href="${pageContext.request.contextPath}/userInfo">User</a></li>
+					<li><a href="${pageContext.request.contextPath}/login">Login</a></li>
+					<li><a href="${pageContext.request.contextPath}/logout">Home</a></li>
+				</ul>
+			</nav>
+			<a class="cta" href="#"><button>Contact</button></a>
+		</header>   
+	</body>
+<div>
 &nbsp;
-<span style="color:red">[ ${loginedUser.login} ]</span>
+<span style="color:white">[ ${loginedUser.login} ]</span>
 </div>  
