@@ -60,8 +60,10 @@ body {
 
 .box h1 {
 	color: white;
+	font-size: 20px;
 	text-transform: uppercase;
-	font-weight: 500;
+	background: #191919;
+	font-weight: 400;
 }
 
 .box input[type="text"],.box input[type="password"]{
@@ -80,7 +82,7 @@ body {
 }
 
 .box input[type="text"]:focus,.box input[type="password"]:focus {
-	width: 280px;
+	width: 220px;
 	border-color: #2ecc71;
 }
 

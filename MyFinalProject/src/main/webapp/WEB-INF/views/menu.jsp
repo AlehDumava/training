@@ -25,10 +25,7 @@
 					<li><a href="${pageContext.request.contextPath}/logout">Home</a></li>
 				</ul>
 			</nav>
+			<a class="out_user_name"> <output name="name"> ${loginedUser.login} </output></a>
 			<a class="cta" href="#"><button>Contact</button></a>
 		</header>   
 	</body>
-<div>
-&nbsp;
-<span style="color:white">[ ${loginedUser.login} ]</span>
-</div>  

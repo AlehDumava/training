@@ -18,30 +18,13 @@
       <jsp:include page="menu.jsp"></jsp:include>   
 
       <form class="box" action="${pageContext.request.contextPath}/login" method="POST" >
-      	<h1>Ligin</h1>
-      		<input placeholder="User name" type="text" name="login" value= "${user.login}" />
+      	<h1>Login</h1>
+      		<input placeholder="user name" type="text" autocomplete="off" name="login" value= "${user.login}" />
       		<input placeholder="password" type="password" name="password" value= "${user.password}" />
       		<input type="submit" name="" value="Login" />
       </form>
       		
 <%--          <input type="hidden" name="redirectId" value="${param.redirectId}"/> --%>
-<!--          <table border="1"> -->
-<!--             <tr> -->
-<!--                <td>User Name</td> -->
-<%--                <td><input tabindex="1" placeholder="login" type="text" name="login" value= "${user.login}" /> </td> --%>
-<!--             </tr> -->
-<!--             <tr> -->
-<!--                <td>Password</td> -->
-<%--                <td><input tabindex="2" placeholder="password" type="password" name="password" value= "${user.password}" /> </td> --%>
-<!--             </tr> -->
-         
-<!--             <tr> -->
-<!--                <td colspan ="2"> -->
-<!--                   <input type="submit" value= "Submit" /> -->
 <%--                   <a href="${pageContext.request.contextPath}/">Cancel</a> --%>
-<!--                </td> -->
-<!--             </tr> -->
-<!--          </table> -->
-<!--       </form> -->
         
    </body>
